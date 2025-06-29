@@ -19,11 +19,18 @@ const Nota = ({ grand, total }) => {
         <span>Biaya Layanan</span>
         <span>{formatCurrency(total.serviceFee)}</span>
       </div>
+      {total.otherFee > 0 &&
+        <div className="flex justify-between">
+          <span>Biaya Lainnya</span>
+          <span>{formatCurrency(total.otherFee)}</span>
+        </div>
+      }
+
       <div className="flex justify-between font-bold border-t-black border-t-2 text-lg">
         <h1>Grand Total</h1>
         <h1>
           {formatCurrency(
-            grand - total.discount + total.deliveryFee + total.serviceFee,
+            grand - total.discount + total.deliveryFee + total.serviceFee + total.otherFee,
           )}
         </h1>
       </div>

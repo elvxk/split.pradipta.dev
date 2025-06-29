@@ -22,6 +22,7 @@ const Home = () => {
     discount: 0,
     deliveryFee: 0,
     serviceFee: 0,
+    otherFee: 0,
   });
   const [result, setResult] = useState([]);
   const [grand, setGrand] = useState(0);
@@ -40,7 +41,7 @@ const Home = () => {
     }, 0);
 
     const totalWithFees =
-      grandTotal - total.discount + total.deliveryFee + total.serviceFee;
+      grandTotal - total.discount + total.deliveryFee + total.serviceFee + total.otherFee;
 
     const individualTotals = people.map((person) => {
       const personTotal = person.items.reduce(
@@ -55,7 +56,8 @@ const Home = () => {
         personTotal -
         totalSavings +
         percentage * total.deliveryFee +
-        percentage * total.serviceFee;
+        percentage * total.serviceFee +
+        percentage * total.otherFee;
       return {
         name: person.name,
         items: person.items,
