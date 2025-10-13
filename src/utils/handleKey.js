@@ -3,5 +3,8 @@ const handleKeyDown = (e) => {
   if ([".", "-", "e", "E", "+", ","].includes(e.key)) {
     e.preventDefault();
   }
+  if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+    e.preventDefault()
+  }
 };
 export default handleKeyDown;

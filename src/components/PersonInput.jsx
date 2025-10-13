@@ -39,6 +39,11 @@ const PersonInput = ({ person, setPeople, people, index }) => {
     setPeople(newPeople);
   };
 
+  const handleWheel = (e) => {
+    e.preventDefault()
+    e.currentTarget.blur()
+  }
+
   return (
     <Card className="relative">
       <div
@@ -84,6 +89,7 @@ const PersonInput = ({ person, setPeople, people, index }) => {
                   onChange={(e) => handleItemChange(e, itemIndex)}
                   placeholder={`Harga barang ${itemIndex + 1}`}
                   onKeyDown={handleKeyDown}
+                  onWheel={handleWheel}
                   min="0"
                   className="no-arrows"
                 />
