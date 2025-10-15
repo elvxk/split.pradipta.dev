@@ -6,6 +6,7 @@ import { Label } from "./ui/label";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { FaRegTrashAlt } from "react-icons/fa";
+import handleWheel from "@/utils/handleWheel";
 
 const Discount = ({ total, setTotal }) => {
   const [showOtherFee, setShowOtherFee] = useState(false);
@@ -33,6 +34,7 @@ const Discount = ({ total, setTotal }) => {
               onChange={handleTotalChange}
               placeholder="Total diskon"
               onKeyDown={handleKeyDown}
+              onWheel={handleWheel}
               min="0"
               className="no-arrows"
             />
@@ -46,6 +48,7 @@ const Discount = ({ total, setTotal }) => {
               placeholder="Biaya pengiriman"
               onChange={handleTotalChange}
               onKeyDown={handleKeyDown}
+              onWheel={handleWheel}
               min="0"
               className="no-arrows"
             />
@@ -59,6 +62,7 @@ const Discount = ({ total, setTotal }) => {
               placeholder="Biaya layanan"
               onChange={handleTotalChange}
               onKeyDown={handleKeyDown}
+              onWheel={handleWheel}
               min="0"
               className="no-arrows"
             />
@@ -86,6 +90,7 @@ const Discount = ({ total, setTotal }) => {
                   onChange={handleTotalChange}
                   placeholder="Biaya lainnya"
                   onKeyDown={handleKeyDown}
+                  onWheel={handleWheel}
                   min="0"
                   className="no-arrows"
                 />
