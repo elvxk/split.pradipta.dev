@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { IoIosClose } from "react-icons/io";
 import handleKeyDown from "@/utils/handleKey";
+import handleWheel from "@/utils/handleWheel";
 
 const PersonInput = ({ person, setPeople, people, index }) => {
   const handlePersonChange = (e) => {
@@ -39,10 +40,10 @@ const PersonInput = ({ person, setPeople, people, index }) => {
     setPeople(newPeople);
   };
 
-  const handleWheel = (e) => {
-    e.preventDefault()
-    e.currentTarget.blur()
-  }
+  // const handleWheel = (e) => {
+  //   e.preventDefault()
+  //   e.currentTarget.blur()
+  // }
 
   return (
     <Card className="relative">
